@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Jihed Riahi - AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.42.0/tsparticles.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        accent: '#06b6d4',
+                    },
+                    fontFamily: {
+                        'sans': ['Space Grotesk', 'sans-serif'],
+                        'heading': ['Rajdhani', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .hero-pattern {
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+        }
+        .card-glass {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+        .skill-bar {
+            height: 6px;
+            border-radius: 3px;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            transform-style: preserve-3d;
+        }
+        .project-card:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+            box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+        }
+        .neon-border {
+            position: relative;
+        }
+        .neon-border:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+        .pattern-dots {
+            background-image: radial-gradient(rgba(139, 92, 246, 0.2) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        .glow-text {
+            text-shadow: 0 0 8px rgba(99, 102, 241, 0.8), 0 0 15px rgba(139, 92, 246, 0.6);
+        }
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #6366f1;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #6366f1; }
+        }
+        section {
+            scroll-margin-top: 100px;
+        }
+        .grid-pattern {
+            background-size: 30px 30px;
+            background-image: linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Background Animation -->
+    <div id="tsparticles" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center">
+                    <span class="font-heading font-bold text-xl">MJH</span>
+                </div>
+                <span class="text-xl font-heading font-bold tracking-wide">Mohamed Jihed Riahi</span>
+            </div>
+            <div class="hidden md:flex space-x-10">
+                <a href="#hero" class="text-secondary hover:text-accent transition-colors duration-300">Home</a>
+                <a href="#about" class="hover:text-accent transition-colors duration-300">About</a>
+                <a href="#projects" class="hover:text-accent transition-colors duration-300">Projects</a>
+                <a href="#skills" class="hover:text-accent transition-colors duration-300">Skills</a>
+                <a href="#certifications" class="hover:text-accent transition-colors duration-300">Certifications</a>
+                <a href="#languages" class="hover:text-accent transition-colors duration-300">Languages</a>
+                <a href="#soft-skills" class="hover:text-accent transition-colors duration-300">Soft Skills</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+            <a href="https://github.com/mohamedjihedriahi" target="_blank" class="bg-gradient-to-r from-primary to-secondary px-6 py-2 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+                GitHub
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen flex items-center relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 tracking-tight">
+                <span class="block">Mohamed Jihed Riahi</span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Data Scientist</span>
+                <span class="block">Azure Certified</span>
+            </h1>
+            <div class="typewriter text-xl md:text-2xl text-gray-300 mb-8 mt-4">Professional Data Scientist & AI Engineer.</div>
+            
+            <!-- Buttons -->
+            <div class="flex space-x-6">
+                <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full text-lg font-medium hover:shadow-xl hover:shadow-primary/30 transition-all duration-300">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 border-2 border-primary rounded-full text-lg font-medium group hover:bg-primary/20 transition-all duration-300">
+                    <span class="group-hover:text-accent">Contact Me</span>
+                </a>
+            </div>
+
+            <!-- Social Icons Added Here -->
+            <div class="flex space-x-8 mt-10">
+                <a href="https://github.com/mohamedjihedriahi" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/riahimedjihed/" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                    <i class="fab fa-linkedin-in text-2xl"></i>
+                </a>
+                <a href="https://x.com/Tunisitherapie" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                    <i class="fab fa-x-twitter text-2xl"></i>
+                </a>
+                <a href="https://medium.com/@mohamedjihed.riahi" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                    <i class="fab fa-medium-m text-2xl"></i>
+                </a>
+                <a href="https://www.kaggle.com/mohamedjihedriahi" target="_blank" class="text-gray-500 hover:text-accent transition-colors">
+                    <i class="fab fa-kaggle text-2xl"></i>
+                </a>
+            </div>
+
+            <!-- Hugging Face Button -->
+            <div class="mt-10">
+                <a href="https://huggingface.co/nulltella" target="_blank" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full text-lg font-medium hover:shadow-xl hover:shadow-primary/30 transition-all duration-300">
+                    <img src="https://cas-bridge.xethub.hf.co/xet-bridge-us/63d3eec885118edc0439bd98/b5b6c9df87c8c406e1f861d53537050e7f0ed7aaee4f7768fe9087ee7db54992?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20250711%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250711T153904Z&X-Amz-Expires=3600&X-Amz-Signature=0c8fde8f1342217280da636a308c9f7d654e01d3bbb07c3129d4d3f23450b4b3&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=67c5c05a63e5c0ce377bfbb4&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27hf-logo.svg%3B+filename%3D%22hf-logo.svg%22%3B&response-content-type=image%2Fsvg%2Bxml&x-id=GetObject&Expires=1752251944&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc1MjI1MTk0NH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82M2QzZWVjODg1MTE4ZWRjMDQzOWJkOTgvYjViNmM5ZGY4N2M4YzQwNmUxZjg2MWQ1MzUzNzA1MGU3ZjBlZDdhYWVlNGY3NzY4ZmU5MDg3ZWU3ZGI1NDk5MioifV19&Signature=jK%7Eo6Ue4Iz1e1Nqw6xJUaWSnrXIML0gj7OuP%7EZxIF7XOJSrXOeXvzmzXE58C0vfspeYT3LB9w1313OYK29yo2ttYUveYhlc6TBbBlvivisKweDFo0uYGxFiUrZvra9Jux320xWH6l5cBlOqOKQFJan9ZvKGwNwA7S2qGpep%7EN3sSD1qmQ%7EITcKuNPhps4TIaXdj39ujMCpiAUP1SKrQ-hos2eVlZTXF%7EwGGclPnzOlK3WVAab4DzmnQMxYsD%7ENyEzNPVWHP%7Ehnt3l0IE4CwNUbAYOAvqpGx7s3w0AoVFWwtnP5-ZwLkvwBnDuSbNh1DMk6LsTo3Uk2iZbBhpyIYseQ__&Key-Pair-Id=K2L8F4GPSG1IFC" alt="Hugging Face Logo" class="h-6 w-6 mr-3">
+                    <span>Huggingface</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="flex justify-center relative">
+            <div class="relative">
+                <div class="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-primary to-secondary animate-pulse-slow blur-3xl opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="w-64 h-64 md:w-80 md:h-80 relative bg-gray-800 rounded-3xl overflow-hidden shadow-2xl transform rotate-3 border-2 border-gray-700">
+                    <div class="absolute inset-0 bg-gradient-to-br from-dark to-gray-900 opacity-80"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex">
+                                <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-xs font-mono">model.py</div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <div class="text-gray-500 font-mono mr-4">1</div>
+                                <div class="text-accent">class</div>
+                                <div class="text-secondary ml-2">TransformerModel</div>
+                                <div class="text-white">(nn.Module):</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-500 font-mono mr-4">2</div>
+                                <div class="ml-4 text-white">def</div>
+                                <div class="text-accent ml-2">__init__</div>
+                                <div class="text-white">(self, ...</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-500 font-mono mr-4">3</div>
+                                <div class="ml-8 text-accent">self</div>
+                                <div class="text-white">.attention = </div>
+                                <div class="text-secondary">MultiHeadAttention</div>
+                                <div class="text-white">(...)</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-500 font-mono mr-4">4</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-500 font-mono mr-4">5</div>
+                                <div class="ml-4 text-white">def</div>
+                                <div class="text-accent ml-2">forward</div>
+                                <div class="text-white">(self, x):</div>
+                            </div>
+                            <div class="flex">
+                                <div class="text-gray-500 font-mono mr-4">6</div>
+                                <div class="ml-8 text-accent">x</div>
+                                <div class="text-white">= </div>
+                                <div class="text-secondary">self</div>
+                                <div class="text-white">.attention(</div>
+                                <div class="text-accent">x</div>
+                                <div class="text-white">)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-lg bg-dark border border-gray-700 shadow-xl z-20 p-4">
+                        <div class="animate-spin-slow w-full h-full flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full border-t-2 border-r-2 border-b-2 border-primary"></div>
+                        </div>
+                        <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                            <span class="text-primary text-sm">PyTorch</span>
+                        </div>
+                    </div>
+                    <div class="absolute -top-8 -left-8 w-24 h-24 rounded-full bg-gradient-to-br from-primary to-secondary shadow-xl flex items-center justify-center z-20">
+                        <span class="text-xl font-bold">AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+            <a href="#about" class="text-accent text-3xl">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">About <span class="text-accent">Me</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+    
+            <!-- Main container for the layout rows -->
+            <div class="flex flex-col gap-16">
+    
+                <!-- Top Row: Contains the two-column grid for AI and Education -->
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                
+                    <!-- Left Column: AI & Data Science Enthusiast -->
+                    <div class="relative">
+                        <div class="pattern-dots w-full h-80 rounded-2xl absolute -top-6 -left-6 z-0"></div>
+                        <div class="card-glass relative rounded-2xl p-8 h-full">
+                            <h3 class="text-2xl font-bold mb-4">AI & Data Science Enthusiast</h3>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                Highly motivated Junior Data Scientist with strong expertise in Artificial Intelligence, Deep Learning, Software
+                                Engineering and Data Science. My passion lies in translating cutting-edge research into practical applications that
+                                create tangible business value. I thrive at the intersection of data science, software engineering and infrastructure.
+                            </p>
+                            <p class="text-gray-300 mb-6 leading-relaxed">
+                                Based in Tunis, Tunisia, I am eager to contribute my problem-solving skills and technical proficiency to innovative AI projects.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mt-8">
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center mr-3">
+                                        <i class="fas fa-microchip"></i>
+                                    </div>
+                                    <span>Generative AI</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center mr-3">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <span>Deep Learning</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center mr-3">
+                                        <i class="fas fa-language"></i>
+                                    </div>
+                                    <span>Natural Language Processing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center mr-3">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <span>Computer Vision</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Right Column: Education -->
+                    <div class="card-glass rounded-2xl p-8">
+                        <div class="flex items-start">
+                            <div class="mr-6 text-accent text-4xl">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Education</h3>
+                                <p class="text-secondary font-medium">Engineer's degree, Data Science</p>
+                                <p class="text-gray-400">ESPRIT - École Sup Privée d'Ingénierie et de Technologies de Tunis</p>
+                                <p class="text-gray-400 mt-2">2020-2024</p>
+                                <p class="text-gray-400 mt-2"></p>
+                                <p class="text-secondary font-medium">Preparatory Cycle for Engineering Studies</p>
+                                <p class="text-gray-400">FST - Faculty of Sciences of Tunis</p>
+                                <p class="text-gray-400 mt-2">2017 - 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Bottom Row: Experience (spans full width) - MODIFIED FOR INLINE LOGO -->
+                <div class="card-glass rounded-2xl p-8">
+                    <div class="flex items-start">
+                        <!-- Icon -->
+                        <div class="mr-6 text-accent text-4xl">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                
+                        <!-- Content Area -->
+<!-- Content Area -->
+<div class="flex-1">
+    <h3 class="text-xl font-bold mb-6">Experience</h3>
+
+    <!-- Job 1: Infor -->
+    <div class="flex items-start mb-8">
+        <!-- Logo Column -->
+        <div class="w-16 flex-shrink-0 mr-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Infor_logo.svg" alt="Infor Logo" class="w-full h-auto object-contain">
+        </div>
+        <!-- Text Details Column -->
+        <div class="flex-1">
+            <p class="text-secondary font-medium">Data Scientist</p>
+            <p class="text-gray-400">Infor</p>
+            <div class="text-gray-400 mt-4 italic">
+                <p><span class="text-accent font-semibold">Mission:</span></p>
+                <p class="mt-1">
+                    • Built a RAG system to automate financial and operational report generation from Infor CloudSuite ERP data.<br>
+                    • Developed a Q&A assistant (chatbot) to guide clients through business processes via chat, helping them understand formalities best suited for their new business. It retrieves insights from our private knowledge base, supports document uploads (OCR-enabled) and provides contextual URL link suggestions to ensure comprehensive, informed decision-making.<br>
+                    <span class="font-semibold mt-2 block">Stack:</span> Python, LangChain, OpenAI, OCR, Prompt engineering, Pinecone, Streamlit.<br>
+                    <br>
+                    • Built a Chrome extension that transforms how you engage with digital content on any active tab you're on. It enhances your browsing experience by enabling dynamic chat interactions, real-time content analysis, effortless navigation and precise information access.<br>
+                    <span class="font-semibold mt-2 block">Stack:</span> Express, NodeJS, Puppeteer, LLMs, Chrome.<br>
+                    <br>
+                    •  Conducted a comparative analysis of FOSS LLMs (Mistral 7B & Phi 1.5) vs.OpenAI models by fine-tuning them for classification and instruction-following tasks, optimizing performance through quantization and LoRA techniques.<br>
+                    <span class="font-semibold mt-2 block">Stack:</span> LLMs, Wandb, Mistral 7B, Phi 1.5, Quantization, PEFT, HuggingFace.
+                </p>
+            </div>
+            <p class="text-gray-400 mt-2">March 2024 - June 2024</p>
+        </div>
+    </div>
+    
+    <!-- Job 2: LegalPlace -->
+    <div class="flex items-start mb-8">
+        <!-- Logo Column -->
+        <div class="w-16 flex-shrink-0 mr-4">
+            <img src="https://www.maddyness.com/app/uploads/2021/09/legalplace.png" alt="LegalPlace Logo" class="w-full h-auto object-contain p-1 rounded">
+        </div>
+        <!-- Text Details Column -->
+        <div class="flex-1">
+            <p class="text-secondary font-medium">AI Intern (End of studies project)</p>
+            <p class="text-gray-400">LegalPlace</p>
+            <div class="text-gray-400 mt-4 italic">
+                 <p><span class="text-accent font-semibold">Mission:</span></p>
+                 <p class="mt-1">
+                    • Developed ML models and identified emerging trends to support data-driven decision-making.<br>
+                    • Created an API endpoint for building customized forecast models using Auto ARIMA and trend analysis techniques.<br>
+                    • Conducted data mining and performed feature engineering to enhance model performance and insights.<br>
+                    • Develop and enhance ETL/ELT pipelines from diverse customer data sources to ensure alignment with complex ML solution requirements.<br>
+                    • Articulated results and actionable recommendations for executives and cross-functional teams, ensuring alignment with business goals.<br>
+                    <span class="font-semibold mt-2 block">Stack:</span> Statistical modeling · Microsoft Azure · Python · LangChain · Power BI · SQL etc
+                </p>
+            </div>
+            <p class="text-gray-400 mt-2">March 2024 - June 2024</p>
+        </div>
+    </div>
+    
+    <!-- Job 3: ESPRIT -->
+    <div class="flex items-start mb-8">
+        <!-- Logo Column -->
+        <div class="w-16 flex-shrink-0 mr-4">
+            <img src="https://cdio.esprit.tn/images/cdio/logoespritB.png" alt="ESPRIT Logo" class="w-full h-auto object-contain rounded">
+        </div>
+        <!-- Text Details Column -->
+        <div class="flex-1">
+            <p class="text-secondary font-medium">ML intern</p>
+            <p class="text-gray-400">ESPRIT (R&D department)</p>
+            <div class="text-gray-400 mt-4 italic">
+                <p><span class="text-accent font-semibold">Mission:</span></p>
+                <p class="mt-1">
+                    [Applied Deep Learning on Black-Scholes Model]: Developed a neural network model using PyTorch to recreate the Black-Scholes option pricing model, achieving more accurate predictions by overcoming constant volatility assumptions and skewness limitations.
+                </p>
+            </div>
+            <p class="text-gray-400 mt-2">March 2024 - June 2024</p>
+        </div>
+    </div>
+
+    <!-- Job 4: RHIS Software -->
+    <div class="flex items-start">
+        <!-- Logo Column -->
+        <div class="w-16 flex-shrink-0 mr-4">
+            <img src="https://www.rhis-solutions.com/wp-content/uploads/2021/07/logo-solutions2-1.png" alt="RHIS Software Logo" class="w-full h-auto object-contain p-1 rounded">
+        </div>
+        <!-- Text Details Column -->
+        <div class="flex-1">
+            <p class="text-secondary font-medium">Intern</p>
+            <p class="text-gray-400">RHIS Software</p>
+            <div class="text-gray-400 mt-4 italic">
+                <p><span class="text-accent font-semibold">Mission:</span></p>
+                <p class="mt-1">
+                    Migrated/monitored an Angular Web Application dedicated for human resources management and planning for fast-food chains (KFC FRANCE, BURGER QUEEN, POPEY'S, etc).
+                </p>
+            </div>
+            <p class="text-gray-400 mt-2">March 2024 - June 2024</p>
+        </div>
+    </div>
+
+</div>
+                <!-- End of Modified Experience Block -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Featured <span class="text-accent">Projects</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="max-w-2xl mx-auto text-gray-400 mt-8">Explore my recent AI projects that demonstrate innovation in machine learning, natural language processing, and computer vision.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Project 1: MetaRAGent: Hybrid Dynamic RAG Agents -->
+                <div class="project-card card-glass rounded-2xl overflow-hidden border border-gray-700 transition-transform duration-500">
+                    <div class="h-48 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 z-10"></div>
+                        <div class="w-full h-full grid-pattern"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 px-3 py-1 rounded-full text-sm border border-gray-700">
+                            Agentic AI, Multimodal
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">MetaRAGent: Hybrid Dynamic RAG Agents</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">
+                            An agentic AI framework that transforms Retrieval-Augmented Generation from a static pipeline into a adaptive, learning reasoning system
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="https://github.com/mohamedjihedriahi" target="_blank" class="text-accent flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <span class="flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: RAG Application -->
+                <div class="project-card card-glass rounded-2xl overflow-hidden border border-gray-700">
+                    <div class="h-48 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-accent/10 to-primary/10 z-10"></div>
+                         <!-- Placeholder image for A Knowledge based recommendation system for Monitoring PM issues: Ontology learning approach -->
+                        <div class="absolute inset-0 opacity-30" style="background: url('https://placehold.co/400x200/1e293b/a78bfa?text=TuniScholar') center center / cover;"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 px-3 py-1 rounded-full text-sm border border-gray-700">
+                            Ontology, Semantic Web
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">TuniScholar</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">
+                            Rank Tunisian scholars by research impact using Google Scholar and features an AI chat powered by RAG technology for easy data interaction.
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="https://github.com/mohamedjihedriahi/TuniScholar" target="_blank" class="text-accent flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <span class="flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: LegalBot -->
+                <div class="project-card card-glass rounded-2xl overflow-hidden border border-gray-700">
+                    <div class="h-48 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-secondary/10 to-primary/10 z-10"></div>
+                        <!-- Placeholder image for LegalBot -->
+                        <div class="absolute inset-0 opacity-20" style="background: url('https://placehold.co/400x200/1e293b/a78bfa?text=RAG') center center / cover;"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 px-3 py-1 rounded-full text-sm border border-gray-700">
+                            LangChain, OCR, Vector DBs
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">LegalBot</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">
+                            Legal Process Guidance Assistant Using RAG, OCR and Contextual URL Recommendations to Guide You Through Starting and Managing Your New Business
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="https://github.com/mohamedjihedriahi" target="_blank" class="text-accent flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <span class="flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 4: LLM Finetuning -->
+                <div class="project-card card-glass rounded-2xl overflow-hidden border border-gray-700 transition-transform duration-500">
+                    <div class="h-48 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 z-10"></div>
+                        <div class="w-full h-full grid-pattern"></div>
+                         <!-- Placeholder image for Image Generation -->
+                        <div class="absolute inset-0 opacity-30" style="background: url('https://placehold.co/400x200/1e293b/a78bfa?text=LLM+Finetuning') center center / cover;"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 px-3 py-1 rounded-full text-sm border border-gray-700">
+                            Mistral, Phi1.5, OpenAI
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">LLM Fine-Tuning (Instruction-Following and Classification) </h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">
+                            A Fine-Tuning-Based Comparative Study of LLMs for Instruction-Following and Classification on specific domain tasks: OpenAI vs. Mistral and Phi 1.5
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="https://github.com/mohamedjihedriahi" target="_blank" class="text-accent flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <span class="flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 5: LegalPlace Chrome extension -->
+                <div class="project-card card-glass rounded-2xl overflow-hidden border border-gray-700 transition-transform duration-500">
+                    <div class="h-48 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 z-10"></div>
+                        <div class="w-full h-full grid-pattern"></div>
+                         <!-- Placeholder image for Chrome extension -->
+                        <div class="absolute inset-0 opacity-30" style="background: url('https://placehold.co/400x200/1e293b/a78bfa?text=RAG') center center / cover;"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 px-3 py-1 rounded-full text-sm border border-gray-700">
+                            Chrome, web-scarping, OpenAI
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Chrome Extension for Chat-Based Navigation</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">
+                           Transforms how you engage with digital content on any active tab you're on by enabling dynamic chat
+interactions, real-time content analysis, navigation and precise information access.
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="https://github.com/mohamedjihedriahi/LegalBotChromeExtension" target="_blank" class="text-accent flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <span class="flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 6: DevOps Project -->
+                <div class="project-card card-glass rounded-2xl overflow-hidden border border-gray-700 transition-transform duration-500">
+                    <div class="h-48 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 z-10"></div>
+                        <div class="w-full h-full grid-pattern"></div>
+                         <!-- Placeholder image for DevOps -->
+                        <div class="absolute inset-0 opacity-30" style="background: url('https://placehold.co/400x200/1e293b/a78bfa?text=DevOps') center center / cover;"></div>
+                        <div class="absolute top-4 right-4 bg-dark/80 px-3 py-1 rounded-full text-sm border border-gray-700">
+                            CI/CD, Jenkins, Docker
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-xl font-bold">Full DevOps Lifecycle Project</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">
+                            Academic project covering the full spectrum of DevOps practices including CI/CD, containerization and quality assurance.
+                        </p>
+                        <div class="flex justify-between">
+                            <a href="https://github.com/mohamedjihedriahi/DevopsProject" target="_blank" class="text-accent flex items-center">
+                                <i class="fab fa-github mr-2"></i> Source Code
+                            </a>
+                            <span class="flex items-center">
+                                <span class="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="https://github.com/mohamedjihedriahi" target="_blank" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-medium group">
+                    <span class="mr-2">View All Projects</span>
+                    <i class="fab fa-github group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 grid-pattern">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Technical <span class="text-accent">Expertise</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="max-w-2xl mx-auto text-gray-400 mt-8">Specialized skills and technologies I leverage to build state-of-the-art AI solutions.</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Programming & Tools Sub-section -->
+                <div>
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-center md:text-left">Programming & Tools</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Python</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-fire"></i> <!-- PyTorch icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">PyTorch</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-cogs"></i> <!-- TensorFlow icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">TensorFlow</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-code"></i> <!-- Generic code icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">LangChain</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Flask</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">SQL</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Docker</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Linux</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-network-wired"></i> <!-- API icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">REST API</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Azure</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-database"></i> <!-- Pinecone / DB icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Pinecone</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Machine Learning Sub-section -->
+                <div>
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-center md:text-left">AI & Machine Learning</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Deep Learning</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-magic"></i> <!-- Generative AI icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Generative AI</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-cube"></i> <!-- Multimodal AI icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">RAG</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-robot"></i> <!-- Agentic AI icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Agentic AI</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-eye"></i> <!-- Computer Vision icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Computer Vision</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-language"></i> <!-- NLP icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">NLP</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-comments"></i> <!-- LLMs icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">LLMs (Fine-tuning)</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-tachometer-alt"></i> <!-- Optimization icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Optimization</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-compress-alt"></i> <!-- Quantization icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Quantization</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-feather-alt"></i> <!-- Prompt Eng icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Prompt Engineering</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-link"></i> <!-- Langchain icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Langchain</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-vector-square"></i> <!-- Vector DB icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Vector Databases</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science Sub-section -->
+                <div>
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-center md:text-left">Data Science</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-chart-bar"></i> <!-- Data Analysis icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Data Analysis</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-chart-pie"></i> <!-- Visualization icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Visualization</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-calculator"></i> <!-- Statistical Modeling icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Statistical Modeling</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-code-branch"></i> <!-- ML Algorithms icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Machine Learning Algorithms</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-leaf"></i> <!-- MongoDB icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">MongoDB</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-server"></i> <!-- NoSQL icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">NoSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Methodologies Sub-section -->
+                <div>
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-center md:text-left">Methodologies</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-lightbulb"></i> <!-- Problem Solving icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Problem Solving</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-sort-numeric-up-alt"></i> <!-- Algorithms icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Algorithms</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-sitemap"></i> <!-- Agile icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">Agile Development</span>
+                        </div>
+                        <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                            <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                                <i class="fas fa-tools"></i> <!-- MLOps icon -->
+                            </div>
+                            <span class="relative z-10 text-lg font-medium group-hover:text-white">MLOps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">My <span class="text-accent">Certifications</span></h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            <p class="max-w-2xl mx-auto text-gray-400 mt-8">Formal qualifications and specialized training that augment my practical expertise.</p>
+        </div>
+
+        <!-- This container will center a 2-column grid -->
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Certification 1: Microsoft Azure -->
+            <div class="card-glass rounded-2xl p-6 flex items-center">
+                <div class="mr-4 text-accent text-3xl"><i class="fab fa-microsoft"></i></div>
+                <div>
+                    <h3 class="font-bold">Microsoft: Azure Data Scientist Associate (DP-100)</h3>
+                    <p class="text-gray-400 text-sm">Credential ID 5F3B88AEBB33DA4E</p>
+                </div>
+            </div>
+
+            <!-- Certification 2: HUAWEI AI -->
+            <div class="card-glass rounded-2xl p-6 flex items-center">
+                <div class="mr-4 text-accent text-3xl"><i class="fas fa-brain"></i></div>
+                <div>
+                    <h3 class="font-bold">HUAWEI: HCIA-AI</h3>
+                    <p class="text-gray-400 text-sm">Credential ID 010102001825808843171409</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Languages Section -->
+    <section id="languages" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">My <span class="text-accent">Language Proficiency</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="max-w-2xl mx-auto text-gray-400 mt-8">Effective communication is key; here's my linguistic capability.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-glass rounded-2xl p-6 flex items-center">
+                    <div class="mr-4 text-accent text-3xl"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <h3 class="font-bold">Arabic</h3>
+                        <p class="text-gray-400 text-sm">Native Language</p>
+                    </div>
+                </div>
+                <div class="card-glass rounded-2xl p-6 flex items-center">
+                    <div class="mr-4 text-accent text-3xl"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <h3 class="font-bold">English</h3>
+                        <p class="text-gray-400 text-sm">Full Professional Proficiency</p>
+                    </div>
+                </div>
+                <div class="card-glass rounded-2xl p-6 flex items-center">
+                    <div class="mr-4 text-accent text-3xl"><i class="fas fa-globe"></i></div>
+                    <div>
+                        <h3 class="font-bold">French</h3>
+                        <p class="text-gray-400 text-sm">Professional Working Proficiency</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section id="soft-skills" class="py-24 grid-pattern">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">My <span class="text-accent">Soft Skills</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="max-w-2xl mx-auto text-gray-400 mt-8">Beyond technical prowess, my collaborative and adaptive attributes.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Communication</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Teamwork</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Problem-Solving</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Adaptability</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Mentorship</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Leadership</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Attention to Detail</span>
+                </div>
+                <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <span class="relative z-10 text-lg font-medium group-hover:text-white">Time Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-primary/10 to-secondary/10 blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-1/3 right-1/3 w-64 h-64 rounded-full bg-gradient-to-br from-accent/10 to-primary/10 blur-3xl animate-pulse-slow"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 relative">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Get In <span class="text-accent">Touch</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="max-w-2xl mx-auto text-gray-400 mt-8">Looking for an AI engineer to transform your business? Let's build something amazing together!</p>
+            </div>
+
+            <div class="card-glass rounded-2xl p-8 md:p-12 border border-gray-700">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary text-2xl">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-400">mohamedjihed.riahi@esprit.tn</p>
+                                </div>
+                            </div>
+
+
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary text-2xl">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">LinkedIn</h4>
+                                    <p class="text-gray-400">linkedin.com/riahimedjihed/</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary text-2xl">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">GitHub</h4>
+                                    <p class="text-gray-400">github.com/mohamedjihedriahi</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="mr-4 text-primary text-2xl">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-400">Tunis, Tunisia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-8">Send a Message</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <input type="text" placeholder="Name" class="w-full bg-gray-800 border border-gray-700 rounded-xl py-4 px-6 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email" class="w-full bg-gray-800 border border-gray-700 rounded-xl py-4 px-6 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <textarea placeholder="Message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-xl py-4 px-6 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-primary to-secondary rounded-xl font-medium hover:shadow-xl hover:shadow-primary/30 transition-all">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center text-gray-500">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://github.com/mohamedjihedriahi/" target="_blank" class="hover:text-accent transition-colors">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/riahimedjihed/" target="_blank" class="hover:text-accent transition-colors">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://x.com/Tunisitherapie" target="_blank" class="hover:text-accent transition-colors">
+                    <i class="fa-brands fa-x-twitter text-xl"></i>
+
+                </a>
+                <a href="medium.com/@mohamedjihed.riahi/" target="_blank" class="hover:text-accent transition-colors">
+                    <i class="fab fa-medium-m text-xl"></i>
+                </a>
+                <a href="#" class="hover:text-accent transition-colors">
+                    <i class="fab fa-kaggle text-xl"></i>
+                </a>
+            </div>
+            <p class="mb-4">© 2025 Mohamed Jihed Riahi Portfolio. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart text-primary"></i> for future AI innovations</p>
+        </div>
+    </footer>
+
+    <script>
+        // Particles.js background animation
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.tsParticles) {
+                tsParticles.load("tsparticles", {
+                    fpsLimit: 60,
+                    particles: {
+                        color: {
+                            value: "#6366f1"
+                        },
+                        links: {
+                            color: "#8b5cf6",
+                            distance: 150,
+                            enable: true,
+                            opacity: 0.3,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            outModes: "bounce"
+                        },
+                        number: {
+                            density: {
+                                enable: true,
+                                area: 800
+                            },
+                            value: 80
+                        },
+                        opacity: {
+                            value: 0.5
+                        },
+                        shape: {
+                            type: "circle"
+                        },
+                        size: {
+                            value: { min: 1, max: 3 }
+                        }
+                    },
+                    detectRetina: true
+                });
+            }
+
+            // Typewriter effect for hero section
+            const typedText = document.querySelector('.typewriter');
+            // This timeout ensures the animation plays on load, then resets for potential re-runs.
+            // The existing animation style is removed and re-added to trigger it.
+            setTimeout(() => {
+                typedText.style.animation = 'none';
+                setTimeout(() => typedText.style.animation = 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite', 10);
+            }, 3500); // Original animation duration
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80, // Adjust for fixed nav height
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.hero-pattern {
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+}
+
+.card-glass {
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.skill-bar {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.project-card {
+    transition: all 0.3s ease;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.project-card:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+}
+
+.neon-border {
+    position: relative;
+}
+
+.neon-border:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.pattern-dots {
+    background-image: radial-gradient(rgba(139, 92, 246, 0.2) 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.glow-text {
+    text-shadow: 0 0 8px rgba(99, 102, 241, 0.8), 0 0 15px rgba(139, 92, 246, 0.6);
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #6366f1;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #6366f1;
+    }
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+.grid-pattern {
+    background-size: 30px 30px;
+    background-image: linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+}

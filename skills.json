@@ -10,7 +10,7 @@
             { "icon": "fas fa-network-wired", "text": "REST APIs" },
             { "icon": "fas fa-server", "text": "SQL" },
             { "icon": "fas fa-leaf", "text": "Celery" },
-            { "icon": "fas fa-redis", "text": "Redis" },
+            { "icon": "fas fa-bolt", "text": "Redis" },
             { "icon": "fas fa-bug", "text": "Sentry" }
         ]
     },

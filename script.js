@@ -1,12 +1,12 @@
-// Particles.js background animation
+// ------------------------------------------------------------
+// 1. Particles.js background animation
+// ------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
     if (window.tsParticles) {
         tsParticles.load("tsparticles", {
             fpsLimit: 60,
             particles: {
-                color: {
-                    value: "#6366f1",
-                },
+                color: { value: "#6366f1" },
                 links: {
                     color: "#8b5cf6",
                     distance: 150,
@@ -20,30 +20,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     outModes: "bounce",
                 },
                 number: {
-                    density: {
-                        enable: true,
-                        area: 800,
-                    },
+                    density: { enable: true, area: 800 },
                     value: 80,
                 },
-                opacity: {
-                    value: 0.5,
-                },
-                shape: {
-                    type: "circle",
-                },
-                size: {
-                    value: { min: 1, max: 3 },
-                },
+                opacity: { value: 0.5 },
+                shape: { type: "circle" },
+                size: { value: { min: 1, max: 3 } },
             },
             detectRetina: true,
         });
     }
 
-    // Typewriter effect for hero section
+    // ------------------------------------------------------------
+    // 2. Typewriter effect for hero section
+    // ------------------------------------------------------------
     const typedText = document.querySelector(".typewriter");
-    // This timeout ensures the animation plays on load, then resets for potential re-runs.
-    // The existing animation style is removed and re-added to trigger it.
     setTimeout(() => {
         typedText.style.animation = "none";
         setTimeout(
@@ -52,16 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     "typing 3.5s steps(40, end), blink-caret .75s step-end infinite"),
             10,
         );
-    }, 3500); // Original animation duration
+    }, 3500);
 
-    // Smooth scrolling for navigation
+    // ------------------------------------------------------------
+    // 3. Smooth scrolling for navigation
+    // ------------------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute("href"));
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 80, // Adjust for fixed nav height
+                    top: target.offsetTop - 80,
                     behavior: "smooth",
                 });
             }
@@ -320,6 +313,51 @@ async function loadContactInfo() {
         .join("");
 }
 
+// ------------------------------------------------------------
+// 5. CONTACT FORM – EMAIL SUBMISSION (NEW)
+// ------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contact-form");
+    if (!form) return; // safety
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const status = document.getElementById("form-status");
+        const data = new FormData(form);
+
+        // Show loading
+        status.textContent = "Sending...";
+        status.className = "mt-4 text-center text-sm text-accent block";
+
+        try {
+            const response = await fetch(
+                "https://formspree.io/f/mkgkjzvk"
+                {
+                    method: "POST",
+                    body: data,
+                    headers: { Accept: "application/json" },
+                },
+            );
+
+            if (response.ok) {
+                status.textContent = "Message sent! I'll get back to you soon.";
+                status.className =
+                    "mt-4 text-center text-sm text-green-400 block";
+                form.reset();
+            } else {
+                throw new Error("Server error");
+            }
+        } catch (err) {
+            status.textContent = "Failed to send. Please try again.";
+            status.className = "mt-4 text-center text-sm text-red-400 block";
+        }
+    });
+});
+
+// ------------------------------------------------------------
+// 6. Initialise everything on page load
+// ------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
     loadSocialIcons("social-icons-container", "social.json");
     loadAbout();
@@ -329,5 +367,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loadLanguages();
     loadContactInfo();
     loadSocialIcons("footer-social-container", "social.json");
-    // Add tsparticles init if needed
+    // (tsParticles & typewriter already handled in the first DOMContentLoaded above)
 });

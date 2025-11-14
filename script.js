@@ -316,44 +316,38 @@ async function loadContactInfo() {
 // ------------------------------------------------------------
 // 5. CONTACT FORM – EMAIL SUBMISSION (NEW)
 // ------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contact-form");
-    if (!form) return; // safety
-
-    form.addEventListener("submit", async function (e) {
-        e.preventDefault();
+document
+    .getElementById("contact-form")
+    .addEventListener("submit", async function (e) {
+        e.preventDefault(); // Stops URL change
 
         const status = document.getElementById("form-status");
+        const form = e.target;
         const data = new FormData(form);
 
-        // Show loading
         status.textContent = "Sending...";
         status.className = "mt-4 text-center text-sm text-accent block";
 
         try {
-            const response = await fetch(
-                "https://formspree.io/f/mkgkjzvk"
-                {
-                    method: "POST",
-                    body: data,
-                    headers: { Accept: "application/json" },
-                },
-            );
+            const res = await fetch(form.action, {
+                method: "POST",
+                body: data,
+                headers: { Accept: "application/json" },
+            });
 
-            if (response.ok) {
-                status.textContent = "Message sent! I'll get back to you soon.";
+            if (res.ok) {
+                status.textContent = "Message sent! I'll reply soon.";
                 status.className =
                     "mt-4 text-center text-sm text-green-400 block";
                 form.reset();
             } else {
-                throw new Error("Server error");
+                throw new Error();
             }
-        } catch (err) {
-            status.textContent = "Failed to send. Please try again.";
+        } catch {
+            status.textContent = "Failed. Try again or email me directly.";
             status.className = "mt-4 text-center text-sm text-red-400 block";
         }
     });
-});
 
 // ------------------------------------------------------------
 // 6. Initialise everything on page load

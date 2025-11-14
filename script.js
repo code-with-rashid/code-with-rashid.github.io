@@ -245,17 +245,37 @@ async function loadCertifications() {
     const response = await fetch("certifications.json");
     const certs = await response.json();
     const container = document.getElementById("certifications-container");
+
     container.innerHTML = certs
         .map(
             (cert) => `
-    <div class="card-glass rounded-2xl p-6 flex items-center">
-      <div class="mr-4 text-accent text-3xl"><i class="${cert.icon}"></i></div>
-      <div>
-        <h3 class="font-bold">${cert.title}</h3>
-        <p class="text-gray-400 text-sm">${cert.credential}</p>
+      <div class="card-glass rounded-2xl p-6 flex items-start group hover:border-primary transition-all duration-300 cursor-pointer"
+           onclick="window.open('${cert.link}', '_blank', 'noopener,noreferrer')">
+
+        <!-- Icon -->
+        <div class="mr-4 text-accent text-3xl flex-shrink-0 group-hover:glow-text transition-all">
+          <i class="${cert.icon}"></i>
+        </div>
+
+        <!-- Content -->
+        <div class="flex-1">
+          <h3 class="font-bold text-white group-hover:text-primary transition-colors">
+            ${cert.title}
+          </h3>
+          <p class="text-gray-400 text-sm mt-1">${cert.credential}</p>
+
+          <!-- Verification Link (small, subtle) -->
+          <a href="${cert.link}"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="inline-flex items-center text-xs text-accent mt-3 opacity-0 group-hover:opacity-100 transition-opacity"
+             onclick="event.stopPropagation()">
+            <i class="fas fa-external-link-alt mr-1"></i>
+            Verify Certificate
+          </a>
+        </div>
       </div>
-    </div>
-  `,
+    `,
         )
         .join("");
 }
@@ -273,25 +293,6 @@ async function loadLanguages() {
         <h3 class="font-bold">${lang.name}</h3>
         <p class="text-gray-400 text-sm">${lang.proficiency}</p>
       </div>
-    </div>
-  `,
-        )
-        .join("");
-}
-
-async function loadSoftSkills() {
-    const response = await fetch("soft-skills.json");
-    const skills = await response.json();
-    const container = document.getElementById("soft-skills-container");
-    container.innerHTML = skills
-        .map(
-            (skill) => `
-    <div class="card-glass rounded-xl p-5 flex flex-col items-center justify-center text-center group relative overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-800 hover:border-primary">
-      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-      <div class="relative z-10 text-accent text-4xl mb-3 group-hover:glow-text">
-        <i class="${skill.icon}"></i>
-      </div>
-      <span class="relative z-10 text-lg font-medium group-hover:text-white">${skill.text}</span>
     </div>
   `,
         )
@@ -326,7 +327,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSkills();
     loadCertifications();
     loadLanguages();
-    loadSoftSkills();
     loadContactInfo();
     loadSocialIcons("footer-social-container", "social.json");
     // Add tsparticles init if needed

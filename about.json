@@ -1,77 +1,104 @@
 {
     "aiEnthusiast": {
-        "title": "Agentic AI & Automation Leader | 10+ years in Python, LLM Orchestration & Cloud",
+        "title": "Lead Software Engineer | Agentic AI, RAG & LLM Orchestration",
         "descriptions": [
-            "I architect and deliver autonomous, agentic systems that streamline complex workflows and drive smarter decision-making across enterprise environments.",
-            "Based in Abu Dhabi, United Arab Emirates, Passionate about transforming AI research into production-grade solutions and mentoring teams to adopt agentic development best practices."
+            "Lead Software Engineer at Open Innovation, specializing in RAG, Agents, and Agentic Development. I design and deliver production-ready AI systems that integrate LLMs with enterprise data, enabling autonomous, multi-step reasoning and workflow automation.",
+            "Based in Abu Dhabi, UAE. Over 10 years of experience in Python, SaaS platforms, AI-first architectures, and cloud infrastructure. Proven leader in mentoring teams, scaling systems, and driving measurable business impact through AI."
         ],
         "skills": [
             {
-                "icon": "fas fa-microchip",
-                "text": "CrewAI multi-agent orchestration"
+                "icon": "fas fa-robot",
+                "text": "Agentic AI & Multi-Agent Systems"
             },
             {
                 "icon": "fas fa-brain",
-                "text": "Manus goal-driven research agents"
+                "text": "RAG Pipelines & LLM Orchestration"
             },
-            { "icon": "fas fa-language", "text": "OpenAI Agents SDK" },
-            { "icon": "fas fa-eye", "text": "Google ADK (Gemini & Vertex AI)" }
+            {
+                "icon": "fas fa-code",
+                "text": "FastAPI, Flask, LangChain"
+            },
+            {
+                "icon": "fas fa-cloud",
+                "text": "AWS, Docker, Kubernetes"
+            },
+            {
+                "icon": "fas fa-users",
+                "text": "Technical Leadership & Mentoring"
+            },
+            {
+                "icon": "fas fa-chart-line",
+                "text": "SaaS, E-commerce, Data Pipelines"
+            }
         ]
     },
     "education": {
         "icon": "fas fa-graduation-cap",
-        "degree": "Bachelor's degree, Computer Science",
+        "degree": "Bachelor’s Degree in Computer Science",
         "university": "University of Gujrat",
-        "years": "2010-2014"
+        "years": "2010 – 2014",
+        "honors": "Gold Medal for Academic Excellence"
     },
     "experience": {
         "icon": "fas fa-briefcase",
         "jobs": [
             {
                 "logo": "https://openinnovation.ai/wp-content/uploads/2025/03/Asset-1-1.svg",
-                "title": "Technical Lead",
-                "company": "Open innovation AI",
-                "period": "March 2024 - Current",
+                "title": "Lead Software Engineer",
+                "company": "Open Innovation",
+                "location": "Abu Dhabi, United Arab Emirates",
+                "period": "March 2024 – Present",
                 "mission": [
-                    "• Built a RAG system to automate financial and operational report generation from Infor CloudSuite ERP data.",
-                    "• Developed a Q&A assistant (chatbot) to guide clients through business processes via chat, helping them understand formalities best suited for their new business. It retrieves insights from our private knowledge base, supports document uploads (OCR-enabled) and provides contextual URL link suggestions to ensure comprehensive, informed decision-making.",
-                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Python, LangChain, OpenAI, OCR, Prompt engineering, Pinecone, Streamlit.",
-                    "• Built a Chrome extension that transforms how you engage with digital content on any active tab you're on. It enhances your browsing experience by enabling dynamic chat interactions, real-time content analysis, effortless navigation and precise information access.",
-                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Express, NodeJS, Puppeteer, LLMs, Chrome.",
-                    "• Conducted a comparative analysis of FOSS LLMs (Mistral 7B & Phi 1.5) vs.OpenAI models by fine-tuning them for classification and instruction-following tasks, optimizing performance through quantization and LoRA techniques.",
-                    "<span class=\"font-semibold mt-2 block\">Stack:</span> LLMs, Wandb, Mistral 7B, Phi 1.5, Quantization, PEFT, HuggingFace."
-                ]
-            },
-            {
-                "logo": "https://www.maddyness.com/app/uploads/2021/09/legalplace.png",
-                "title": "Technical Lead",
-                "company": "KMMRCE",
-                "period": "October 2022 - March 2024",
-                "mission": [
-                    "• Developed ML models and identified emerging trends to support data-driven decision-making.",
-                    "• Created an API endpoint for building customized forecast models using Auto ARIMA and trend analysis techniques.",
-                    "• Conducted data mining and performed feature engineering to enhance model performance and insights.",
-                    "• Develop and enhance ETL/ELT pipelines from diverse customer data sources to ensure alignment with complex ML solution requirements.",
-                    "• Articulated results and actionable recommendations for executives and cross-functional teams, ensuring alignment with business goals.",
-                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Statistical modeling · Microsoft Azure · Python · LangChain · Power BI · SQL etc"
+                    "• Leading AI-focused projects with emphasis on RAG pipelines, agent-based systems, and LLM integrations.",
+                    "• Designed and delivered APIs with FastAPI and Flask, enabling smooth orchestration of agent workflows and enterprise data integrations.",
+                    "• Built frameworks that allow agents to reason, interact with tools, and perform multi-step workflows in production environments.",
+                    "• Improved knowledge applications by combining LLMs with structured data sources, enhancing reliability and accuracy.",
+                    "• Mentored developers in AI-first engineering practices and guided adoption of scalable, production-ready approaches.",
+                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Python, FastAPI, Flask, LangChain, OpenAI, RAG, Docker, AWS, CI/CD"
                 ]
             },
             {
                 "logo": "https://cdio.esprit.tn/images/cdio/logoespritB.png",
-                "title": "Senior Software Engineer",
+                "title": "Lead Python Engineer / Technical Lead",
                 "company": "Digital & Code",
-                "period": "February 2021 - October 2022",
+                "location": "Dubai, United Arab Emirates",
+                "period": "February 2021 – February 2024",
                 "mission": [
-                    "[Applied Deep Learning on Black-Scholes Model]: Developed a neural network model using PyTorch to recreate the Black-Scholes option pricing model, achieving more accurate predictions by overcoming constant volatility assumptions and skewness limitations."
+                    "• Directed development of SaaS-based E-commerce solutions for major retailers including Spinneys, Waitrose, and Choithrams.",
+                    "• Key contributor to the Kmmrce SaaS platform, driving significant growth in client online sales.",
+                    "• Designed and implemented RESTful APIs and integrated multiple payment gateways.",
+                    "• Promoted test-driven development (TDD) and conducted code reviews to maintain quality.",
+                    "• Oversaw production releases and collaborated with cross-functional teams (frontend, UX, product) to deliver user-focused features.",
+                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Python, Django, Django Oscar, SaaS, REST APIs, Payment Gateways, AWS, CI/CD"
                 ]
             },
             {
-                "logo": "https://www.rhis-solutions.com/wp-content/uploads/2021/07/logo-solutions2-1.png",
-                "title": "Intern",
-                "company": "RHIS Software",
-                "period": "March 2024 - June 2024",
+                "logo": "https://via.placeholder.com/64?text=Shubbak",
+                "title": "Project Lead Developer",
+                "company": "Shubbak Technologies",
+                "location": "Dubai, United Arab Emirates",
+                "period": "March 2017 – February 2021",
                 "mission": [
-                    "Migrated/monitored an Angular Web Application dedicated for human resources management and planning for fast-food chains (KFC FRANCE, BURGER QUEEN, POPEY'S, etc)."
+                    "• Developed and launched a payment gateway solution widely adopted by eCommerce platforms.",
+                    "• Oversaw deployments on AWS, ensuring scalability and fault tolerance.",
+                    "• Designed workflows for invoicing, order management, and delivery operations, improving efficiency.",
+                    "• Built dashboards for merchants and logistics companies, enabling real-time monitoring and insights.",
+                    "• Developed a customizable Django-based storefront app, empowering merchants to design unique online stores.",
+                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Python, Django, AWS, Payment Integrations, Dashboards, SaaS"
+                ]
+            },
+            {
+                "logo": "https://via.placeholder.com/64?text=Northbay",
+                "title": "Data Engineer",
+                "company": "Northbay Solutions",
+                "location": "Lahore, Pakistan",
+                "period": "October 2014 – January 2017",
+                "mission": [
+                    "• Contributed to data engineering projects and proofs-of-concept, focusing on warehouse design and ETL processes.",
+                    "• Built pipelines using Sqoop, Hive, Impala, Presto, and Spark, with AWS Redshift as the data warehouse.",
+                    "• Implemented Spark-based data cleansing, improving accuracy and performance.",
+                    "• Migrated legacy AS400 iSeries logic to AWS Redshift, streamlining data workflows.",
+                    "<span class=\"font-semibold mt-2 block\">Stack:</span> Spark, Hive, Impala, Presto, Sqoop, AWS Redshift, ETL"
                 ]
             }
         ]

@@ -1,12 +1,14 @@
 [
     {
         "icon": "fab fa-microsoft",
-        "title": "Microsoft: Azure Data Scientist Associate (DP-100)",
-        "credential": "Credential ID 5F3B88AEBB33DA4E"
+        "title": "DeepLearning.AI, Stanford University: Supervised Machine Learning: Regression and Classification",
+        "credential": "Credential ID 7R3AGDDB7UZC",
+        "link": "https://coursera.org/verify/7R3AGDDB7UZC"
     },
     {
         "icon": "fas fa-brain",
-        "title": "HUAWEI: HCIA-AI",
-        "credential": "Credential ID 010102001825808843171409"
+        "title": "Coursera Course Certificates: Introduction to Big Data",
+        "credential": "Credential ID 8NDADK4WPX7M",
+        "link": "https://coursera.org/verify/8NDADK4WPX7M"
     }
 ]

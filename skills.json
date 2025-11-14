@@ -1,58 +1,76 @@
 {
     "programmingTools": {
-        "title": "Programming & Tools",
+        "title": "Programming & Frameworks",
         "skills": [
             { "icon": "fab fa-python", "text": "Python" },
-            { "icon": "fas fa-fire", "text": "PyTorch" },
-            { "icon": "fas fa-cogs", "text": "TensorFlow" },
-            { "icon": "fas fa-code", "text": "LangChain" },
+            { "icon": "fas fa-code", "text": "FastAPI" },
             { "icon": "fas fa-code", "text": "Flask" },
+            { "icon": "fas fa-cogs", "text": "Django" },
+            { "icon": "fas fa-shopping-cart", "text": "Django Oscar" },
+            { "icon": "fas fa-network-wired", "text": "REST APIs" },
             { "icon": "fas fa-server", "text": "SQL" },
-            { "icon": "fab fa-docker", "text": "Docker" },
-            { "icon": "fab fa-linux", "text": "Linux" },
-            { "icon": "fas fa-network-wired", "text": "REST API" },
-            { "icon": "fab fa-microsoft", "text": "Azure" },
-            { "icon": "fas fa-database", "text": "Pinecone" }
+            { "icon": "fas fa-leaf", "text": "Celery" },
+            { "icon": "fas fa-redis", "text": "Redis" },
+            { "icon": "fas fa-bug", "text": "Sentry" }
         ]
     },
     "aiMl": {
-        "title": "AI & Machine Learning",
+        "title": "AI & Agentic Systems",
         "skills": [
-            { "icon": "fas fa-brain", "text": "Deep Learning" },
-            { "icon": "fas fa-magic", "text": "Generative AI" },
-            { "icon": "fas fa-cube", "text": "RAG" },
+            {
+                "icon": "fas fa-cube",
+                "text": "RAG (Retrieval-Augmented Generation)"
+            },
             { "icon": "fas fa-robot", "text": "Agentic AI" },
-            { "icon": "fas fa-eye", "text": "Computer Vision" },
-            { "icon": "fas fa-language", "text": "NLP" },
-            { "icon": "fas fa-comments", "text": "LLMs (Fine-tuning)" },
-            { "icon": "fas fa-tachometer-alt", "text": "Optimization" },
+            { "icon": "fas fa-brain", "text": "LLM Orchestration" },
+            { "icon": "fas fa-link", "text": "LangChain" },
+            { "icon": "fas fa-key", "text": "OpenAI APIs" },
+            { "icon": "fas fa-comments", "text": "Prompt Engineering" },
+            { "icon": "fas fa-fire", "text": "PyTorch" },
+            { "icon": "fas fa-cogs", "text": "TensorFlow" },
             { "icon": "fas fa-compress-alt", "text": "Quantization" },
-            { "icon": "fas fa-feather-alt", "text": "Prompt Engineering" },
-            { "icon": "fas fa-link", "text": "Langchain" },
             { "icon": "fas fa-vector-square", "text": "Vector Databases" }
         ]
     },
-    "dataScience": {
-        "title": "Data Science",
+    "cloudInfra": {
+        "title": "Cloud & Infrastructure",
         "skills": [
-            { "icon": "fas fa-chart-bar", "text": "Data Analysis" },
-            { "icon": "fas fa-chart-pie", "text": "Visualization" },
-            { "icon": "fas fa-calculator", "text": "Statistical Modeling" },
-            {
-                "icon": "fas fa-code-branch",
-                "text": "Machine Learning Algorithms"
-            },
+            { "icon": "fab fa-aws", "text": "AWS" },
+            { "icon": "fab fa-docker", "text": "Docker" },
+            { "icon": "fas fa-cubes", "text": "Kubernetes" },
+            { "icon": "fas fa-search", "text": "Elasticsearch" },
+            { "icon": "fab fa-linux", "text": "Linux" },
+            { "icon": "fas fa-code-branch", "text": "Git" },
+            { "icon": "fas fa-play-circle", "text": "CI/CD" },
+            { "icon": "fas fa-tools", "text": "Jenkins" }
+        ]
+    },
+    "dataEngineering": {
+        "title": "Data Engineering & Pipelines",
+        "skills": [
+            { "icon": "fas fa-database", "text": "ETL/ELT Pipelines" },
+            { "icon": "fas fa-snowflake", "text": "AWS Redshift" },
+            { "icon": "fas fa-fire", "text": "Apache Spark" },
+            { "icon": "fas fa-hive", "text": "Hive" },
+            { "icon": "fas fa-table", "text": "Impala" },
+            { "icon": "fas fa-bolt", "text": "Presto" },
+            { "icon": "fas fa-exchange-alt", "text": "Sqoop" },
             { "icon": "fas fa-leaf", "text": "MongoDB" },
             { "icon": "fas fa-server", "text": "NoSQL" }
         ]
     },
     "methodologies": {
-        "title": "Methodologies",
+        "title": "Methodologies & Leadership",
         "skills": [
-            { "icon": "fas fa-lightbulb", "text": "Problem Solving" },
-            { "icon": "fas fa-sort-numeric-up-alt", "text": "Algorithms" },
             { "icon": "fas fa-sitemap", "text": "Agile Development" },
-            { "icon": "fas fa-tools", "text": "MLOps" }
+            { "icon": "fas fa-tools", "text": "MLOps" },
+            { "icon": "fas fa-vial", "text": "Test-Driven Development (TDD)" },
+            { "icon": "fas fa-code-branch", "text": "Code Reviews" },
+            { "icon": "fas fa-users-cog", "text": "Technical Leadership" },
+            { "icon": "fas fa-chalkboard-teacher", "text": "Mentorship" },
+            { "icon": "fas fa-lightbulb", "text": "Problem Solving" },
+            { "icon": "fas fa-chart-line", "text": "SaaS Architecture" },
+            { "icon": "fas fa-layer-group", "text": "Multi-tenant Systems" }
         ]
     }
 }

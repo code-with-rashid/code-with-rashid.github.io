@@ -1,0 +1,27 @@
+[
+    {
+        "url": "https://github.com/code-with-rashid",
+        "icon": "fab fa-github",
+        "color": "text-gray-500 hover:text-accent"
+    },
+    {
+        "url": "https://www.linkedin.com/in/codewithrashid",
+        "icon": "fab fa-linkedin-in",
+        "color": "text-gray-500 hover:text-accent"
+    },
+    {
+        "url": "https://x.com/codewithrashid",
+        "icon": "fab fa-x-twitter",
+        "color": "text-gray-500 hover:text-accent"
+    },
+    {
+        "url": "https://medium.com/@codewithrashid",
+        "icon": "fab fa-medium-m",
+        "color": "text-gray-500 hover:text-accent"
+    },
+    {
+        "url": "https://www.kaggle.com/codewithrashid",
+        "icon": "fab fa-kaggle",
+        "color": "text-gray-500 hover:text-accent"
+    }
+]

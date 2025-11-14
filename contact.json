@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "fas fa-envelope",
+        "title": "Email",
+        "value": "rashiidmahmood@gamil.com"
+    },
+    {
+        "icon": "fab fa-linkedin-in",
+        "title": "LinkedIn",
+        "value": "linkedin.com/codewithrashid/"
+    },
+    {
+        "icon": "fab fa-github",
+        "title": "GitHub",
+        "value": "github.com/code-with-rashid"
+    },
+    {
+        "icon": "fas fa-map-marker-alt",
+        "title": "Location",
+        "value": "Abu Dhabi, United Arab Emirates"
+    }
+]

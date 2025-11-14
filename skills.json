@@ -1,0 +1,58 @@
+{
+    "programmingTools": {
+        "title": "Programming & Tools",
+        "skills": [
+            { "icon": "fab fa-python", "text": "Python" },
+            { "icon": "fas fa-fire", "text": "PyTorch" },
+            { "icon": "fas fa-cogs", "text": "TensorFlow" },
+            { "icon": "fas fa-code", "text": "LangChain" },
+            { "icon": "fas fa-code", "text": "Flask" },
+            { "icon": "fas fa-server", "text": "SQL" },
+            { "icon": "fab fa-docker", "text": "Docker" },
+            { "icon": "fab fa-linux", "text": "Linux" },
+            { "icon": "fas fa-network-wired", "text": "REST API" },
+            { "icon": "fab fa-microsoft", "text": "Azure" },
+            { "icon": "fas fa-database", "text": "Pinecone" }
+        ]
+    },
+    "aiMl": {
+        "title": "AI & Machine Learning",
+        "skills": [
+            { "icon": "fas fa-brain", "text": "Deep Learning" },
+            { "icon": "fas fa-magic", "text": "Generative AI" },
+            { "icon": "fas fa-cube", "text": "RAG" },
+            { "icon": "fas fa-robot", "text": "Agentic AI" },
+            { "icon": "fas fa-eye", "text": "Computer Vision" },
+            { "icon": "fas fa-language", "text": "NLP" },
+            { "icon": "fas fa-comments", "text": "LLMs (Fine-tuning)" },
+            { "icon": "fas fa-tachometer-alt", "text": "Optimization" },
+            { "icon": "fas fa-compress-alt", "text": "Quantization" },
+            { "icon": "fas fa-feather-alt", "text": "Prompt Engineering" },
+            { "icon": "fas fa-link", "text": "Langchain" },
+            { "icon": "fas fa-vector-square", "text": "Vector Databases" }
+        ]
+    },
+    "dataScience": {
+        "title": "Data Science",
+        "skills": [
+            { "icon": "fas fa-chart-bar", "text": "Data Analysis" },
+            { "icon": "fas fa-chart-pie", "text": "Visualization" },
+            { "icon": "fas fa-calculator", "text": "Statistical Modeling" },
+            {
+                "icon": "fas fa-code-branch",
+                "text": "Machine Learning Algorithms"
+            },
+            { "icon": "fas fa-leaf", "text": "MongoDB" },
+            { "icon": "fas fa-server", "text": "NoSQL" }
+        ]
+    },
+    "methodologies": {
+        "title": "Methodologies",
+        "skills": [
+            { "icon": "fas fa-lightbulb", "text": "Problem Solving" },
+            { "icon": "fas fa-sort-numeric-up-alt", "text": "Algorithms" },
+            { "icon": "fas fa-sitemap", "text": "Agile Development" },
+            { "icon": "fas fa-tools", "text": "MLOps" }
+        ]
+    }
+}

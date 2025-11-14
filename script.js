@@ -133,25 +133,24 @@ async function loadSocialIcons(containerId, jsonFile) {
 }
 
 async function loadAbout() {
-    const response = await fetch("about.json");
-    const about = await response.json();
+    const resp = await fetch("about.json");
+    const about = await resp.json();
 
-    // AI Enthusiast
-    const aiContainer = document.getElementById("ai-enthusiast-container");
-    aiContainer.innerHTML = `
+    // ---- AI Enthusiast -------------------------------------------------
+    document.getElementById("ai-enthusiast-container").innerHTML = `
     <div class="pattern-dots w-full h-80 rounded-2xl absolute -top-6 -left-6 z-0"></div>
     <div class="card-glass relative rounded-2xl p-8 h-full">
       <h3 class="text-2xl font-bold mb-4">${about.aiEnthusiast.title}</h3>
-      ${about.aiEnthusiast.descriptions.map((desc) => `<p class="text-gray-300 mb-6 leading-relaxed">${desc}</p>`).join("")}
+      ${about.aiEnthusiast.descriptions.map((d) => `<p class="text-gray-300 mb-6 leading-relaxed">${d}</p>`).join("")}
       <div class="grid grid-cols-2 gap-4 mt-8">
         ${about.aiEnthusiast.skills
             .map(
-                (skill) => `
+                (s) => `
           <div class="flex items-center">
             <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center mr-3">
-              <i class="${skill.icon}"></i>
+              <i class="${s.icon}"></i>
             </div>
-            <span>${skill.text}</span>
+            <span>${s.text}</span>
           </div>
         `,
             )
@@ -160,13 +159,10 @@ async function loadAbout() {
     </div>
   `;
 
-    // Education
-    const eduContainer = document.getElementById("education-container");
-    eduContainer.innerHTML = `
+    // ---- Education ----------------------------------------------------
+    document.getElementById("education-container").innerHTML = `
     <div class="flex items-start">
-      <div class="mr-6 text-accent text-4xl">
-        <i class="${about.education.icon}"></i>
-      </div>
+      <div class="mr-6 text-accent text-4xl"><i class="${about.education.icon}"></i></div>
       <div>
         <h3 class="text-xl font-bold mb-2">Education</h3>
         <p class="text-secondary font-medium">${about.education.degree}</p>
@@ -176,40 +172,42 @@ async function loadAbout() {
     </div>
   `;
 
-    // Experience
-    const expContainer = document.getElementById("experience-container");
-    expContainer.innerHTML = `
-    <div class="flex items-start">
-      <div class="mr-6 text-accent text-4xl">
-        <i class="${about.experience.icon}"></i>
+    // ---- Experience ---------------------------------------------------
+    const expHTML = about.experience.jobs
+        .map(
+            (job) => `
+    <div class="flex items-start mb-8">
+      <div class="w-16 flex-shrink-0 mr-4">
+        <img src="${job.logo.trim()}"
+             alt="${job.company} Logo"
+             class="w-full h-auto object-contain rounded"
+             loading="lazy"
+             onerror="this.src='https://via.placeholder.com/64?text=Logo';">
       </div>
       <div class="flex-1">
+        <p class="text-secondary font-medium">${job.title}</p>
+        <p class="text-gray-400">${job.company}</p>
+        <div class="text-gray-400 mt-4 italic">
+          <p><span class="text-accent font-semibold">Mission:</span></p>
+          <p class="mt-1">${job.mission.join("<br>")}</p>
+        </div>
+        <p class="text-gray-400 mt-2">${job.period}</p>
+      </div>
+    </div>
+  `,
+        )
+        .join("");
+
+    document.getElementById("experience-container").innerHTML = `
+    <div class="flex items-start">
+      <div class="mr-6 text-accent text-4xl"><i class="${about.experience.icon}"></i></div>
+      <div class="flex-1">
         <h3 class="text-xl font-bold mb-6">Experience</h3>
-        ${about.experience.jobs
-            .map(
-                (job) => `
-          <div class="flex items-start mb-8">
-            <div class="w-16 flex-shrink-0 mr-4">
-              <img src="$$ {job.logo}" alt=" $${job.company} Logo" class="w-full h-auto object-contain">
-            </div>
-            <div class="flex-1">
-              <p class="text-secondary font-medium">${job.title}</p>
-              <p class="text-gray-400">${job.company}</p>
-              <div class="text-gray-400 mt-4 italic">
-                <p><span class="text-accent font-semibold">Mission:</span></p>
-                <p class="mt-1">${job.mission.join("<br>")}</p>
-              </div>
-              <p class="text-gray-400 mt-2">${job.period}</p>
-            </div>
-          </div>
-        `,
-            )
-            .join("")}
+        ${expHTML}
       </div>
     </div>
   `;
 }
-
 async function loadSkills() {
     const response = await fetch("skills.json");
     const skillsData = await response.json();

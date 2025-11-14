@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Unlocking the Potential of lm-evaluation-harness",
+        "tags": "Language Model Evaluation",
+        "description": "The lm-evaluation-harness is a powerful framework designed to facilitate this evaluation, offering a robust set of tools to assess how well language models understand and generate language.",
+        "github": "https://medium.com/@codewithrashid/unlocking-the-potential-of-lm-evaluation-harness-a-comprehensive-guide-for-ai-practitioners-1fdfc1ae6d7f",
+        "status": "Active",
+        "gradient": "from-primary/10 to-secondary/10",
+        "placeholderText": "LM Evaluation",
+        "placeholderImage": "https://placehold.co/400x200/1e293b/a78bfa?text=LM Evaluation"
+    },
+    {
+        "title": "Mastering Elastic Search",
+        "tags": "Search Engine, Data Indexing",
+        "description": "Elastic Search, a powerful search and analytics engine, offers a robust solution for building fast and accurate search applications.",
+        "github": "https://medium.com/@codewithrashid/mastering-elastic-search-building-a-fast-and-accurate-product-search-engine-c86f769f99d3",
+        "status": "Active",
+        "gradient": "from-accent/10 to-primary/10",
+        "placeholderText": "Elastic Search",
+        "placeholderImage": "https://placehold.co/400x200/1e293b/a78bfa?text=Elastic Search"
+    },
+    {
+        "title": "Web Scraping Made Easy with Scrapy",
+        "tags": "Web Scraping, Python",
+        "description": "Scrapy is a Python-based web crawling framework that allows for efficient data extraction from websites.",
+        "github": "https://medium.com/@codewithrashid/web-scraping-made-easy-with-scrapy-a-guide-to-efficiently-extracting-and-analyzing-data-f5b626c81b02",
+        "status": "Active",
+        "gradient": "from-secondary/10 to-primary/10",
+        "placeholderText": "Web Scraping",
+        "placeholderImage": "https://placehold.co/400x200/1e293b/a78bfa?text=Web Scraping"
+    }
+]
